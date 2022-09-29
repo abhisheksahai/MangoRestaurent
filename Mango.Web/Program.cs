@@ -5,6 +5,7 @@ using Mango.Web.Services.IServices;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddHttpClient<IProductService, ProductService>();
 SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductApi"];
 
