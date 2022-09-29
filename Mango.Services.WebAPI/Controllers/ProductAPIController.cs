@@ -36,7 +36,7 @@ namespace Mango.Services.WebAPI.Controllers
         [Route("{id}")]
         public async Task<ResponseDto> Get(int id)
         {
-            ResponseDto responseDto = new ResponseDto();
+            ResponseDto responseDto = new();
             try
             {
                 ProductDto productDto = await _pr.GetProductById(id);
@@ -49,5 +49,57 @@ namespace Mango.Services.WebAPI.Controllers
             }
             return responseDto;
         }
+
+        [HttpPost]
+        public async Task<ResponseDto> Post([FromBody] ProductDto productDto)
+        {
+            ResponseDto responseDto = new();
+            try
+            {
+                ProductDto model = await _pr.CreateUpdateProduct(productDto);
+                responseDto.Result = model;
+            }
+            catch (Exception ex)
+            {
+                responseDto.IsSuccess = false;
+                responseDto.ErrorMessage = new List<string> { ex.ToString() };
+            }
+            return responseDto;
+        }
+
+        [HttpPut]
+        public async Task<ResponseDto> Put([FromBody] ProductDto productDto)
+        {
+            ResponseDto responseDto = new();
+            try
+            {
+                ProductDto model = await _pr.CreateUpdateProduct(productDto);
+                responseDto.Result = model;
+            }
+            catch (Exception ex)
+            {
+                responseDto.IsSuccess = false;
+                responseDto.ErrorMessage = new List<string> { ex.ToString() };
+            }
+            return responseDto;
+        }
+
+        [HttpDelete]
+        public async Task<ResponseDto> Delete(int id)
+        {
+            ResponseDto responseDto = new();
+            try
+            {
+                bool model = await _pr.DeleteProduct(id);
+                responseDto.Result = model;
+            }
+            catch (Exception ex)
+            {
+                responseDto.IsSuccess = false;
+                responseDto.ErrorMessage = new List<string> { ex.ToString() };
+            }
+            return responseDto;
+        }
+
     }
 }

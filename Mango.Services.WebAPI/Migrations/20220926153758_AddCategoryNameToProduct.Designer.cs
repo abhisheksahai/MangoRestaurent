@@ -3,6 +3,7 @@ using Mango.Services.WebAPI.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mango.Services.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220926153758_AddCategoryNameToProduct")]
+    partial class AddCategoryNameToProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,7 +54,7 @@ namespace Mango.Services.WebAPI.Migrations
                             ProductId = 1,
                             CategoryName = "Appetizer",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                            ImageUrl = "https://mangorestaurent.blob.core.windows.net/mango/14.jpg",
+                            ImageUrl = "",
                             Name = "Samosa"
                         },
                         new
@@ -60,7 +62,7 @@ namespace Mango.Services.WebAPI.Migrations
                             ProductId = 2,
                             CategoryName = "Appetizer",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                            ImageUrl = "https://mangorestaurent.blob.core.windows.net/mango/12.jpg",
+                            ImageUrl = "",
                             Name = "Paneer Tikka"
                         },
                         new
@@ -68,7 +70,7 @@ namespace Mango.Services.WebAPI.Migrations
                             ProductId = 3,
                             CategoryName = "Dessert",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                            ImageUrl = "https://mangorestaurent.blob.core.windows.net/mango/11.jpg",
+                            ImageUrl = "",
                             Name = "Sweet Pie"
                         },
                         new
@@ -76,7 +78,7 @@ namespace Mango.Services.WebAPI.Migrations
                             ProductId = 4,
                             CategoryName = "Entree",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                            ImageUrl = "https://mangorestaurent.blob.core.windows.net/mango/13.jpg",
+                            ImageUrl = "",
                             Name = "Pav Bhaji"
                         });
                 });
